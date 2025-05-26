@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор математических функций</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Калькулятор математических функций</h2>
+        
+        <div class="input-section">
+            <label>Квадратное уравнение (ax² + bx + c = 0):</label><br>
+            a: <input type="number" id="a" value="0">
+            b: <input type="number" id="b" value="0">
+            c: <input type="number" id="c" value="0">
+        </div>
+
+        <div class="buttons-section">
+            <button onclick="solveQuadratic()">ax²+bx+c=0</button>
+            <button onclick="calculateFunction1()">8a-b²</button>
+            <button onclick="calculateFunction2()">5a+b/4</button>
+            <button onclick="calculateFunction3()">4(b+a)-a²</button>
+            <button onclick="calculateFunction4()">4(a²/4-b)</button>
+        </div>
+
+        <div class="test-buttons">
+            <button onclick="runTests()">Запустить тесты</button>
+        </div>
+
+        <div class="result-section" id="results">Результаты</div>
+        <div class="test-section" id="testResults">Тест</div>
+    </div>
+
+    <div id="mocha"></div>
+    <script src="https://unpkg.com/mocha@9.2.2/mocha.js"></script>
+    <script src="https://unpkg.com/chai@4.3.6/chai.js"></script>
+    <script>
+        mocha.setup('bdd');
+        var assert = chai.assert;
+    </script>
+    <script src="script.js"></script>
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>
